@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    background-color: #1B5B31;
+    color: #DCC1AB;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.swiper {
+    width: 95%;
+}
+
+.inter {
+    font-family: Inter;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+    top: calc(100% + .25rem);
+    left: -45%;
+    padding: .5rem 1.5rem;
+    width: auto;
+    border-width: 1px;
+    border-radius: 6px;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown > a:focus + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.search-input {
+    grid-template-columns: 80% 20%;
+}
+
+.search-input-menu {
+    grid-template-columns: 80% 20%;
+}
+
+.montserrat {
+    font-family: Montserrat;
+}
+
+.search-btn {
+    background-color: #1B5B31;
+}
+
+.search-input[open] {
+    animation: fade-in 500ms forwards;
+}
+
+.search-input-menu[open] {
+    animation: fade-in 500ms forwards;
+}
+
+.sidebar[open] {
+    animation: fade-in 500ms forwards;
+}
+
+.sidebar[closing] {
+    animation: fade-out 500ms forwards;
+}
+
+.default-portfolio {
+    background-image: linear-gradient(0deg, #DCC1AB, transparent);
+    z-index: 10;
+}
+
+.more_portfolio {
+    display: none;
+}
+
+.full-opacity {
+    opacity: 1;
+}
+
+.bg-image-header {
+    background-image: url('/images/Photo.png');
+    background-attachment: fixed;
+    height: 500px;
+    background-size: cover;
+}
+
+.bg-image-about {
+    background-image: url('/images/Photo1.png');
+    background-attachment: fixed;
+    height: 330px;
+    background-size: contain;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .search-input {
+        grid-template-columns: 90% 10%;
+    }
+
+    .divider {
+        width: calc(80% + 8rem);
+    }
+
+    .bg-image-header, .bg-image-about {
+        height: 737px;
+        background-size: auto;
+    }
+}
+
